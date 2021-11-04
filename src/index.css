@@ -7,3 +7,18 @@
 {
   background-color: #0c8351 !important;
 }
+
+.green-highlight {
+  color:#08c073;
+  font-size: 40px;
+}
+
+.blue-highlight {
+  color: rgb(38, 0, 255);
+  font-size: 25px;
+}
+
+.pink-highlight {
+  color: rgb(255, 0, 212);
+  font-size: 20px;
+}
