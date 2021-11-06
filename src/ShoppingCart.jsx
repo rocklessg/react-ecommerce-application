@@ -19,11 +19,9 @@ class ShoppingCart extends Component {
             <div className="container-fluid">
                 <h4>Shopping Cart</h4>
                 <div className="row">
-                    {this.state.products.map((product) => {
+                    {this.state.products.map((productItem) => {
                         return (
-                        <Product key={product.id} id={product.id}
-                        productName ={product.productName} 
-                        price={product.price} 
+                        <Product key={productItem.id} product={productItem}
                         />
                         );
                     })}
