@@ -82,7 +82,7 @@ class ShoppingCart extends Component {
 
          //update the state of current (parent) component
          this.setState({products: allProducts});
-        };
+        }
 
     };
 }
