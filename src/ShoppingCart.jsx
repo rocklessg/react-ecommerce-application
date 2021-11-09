@@ -2,18 +2,21 @@ import React, { Component } from "react";
 import Product from "./Product";
 
 class ShoppingCart extends Component {
-
-    state = {
-        products: [
-            {id: 1, productName: "iPhone", price: 150, quantity: 0},
-            {id: 2, productName: "Sony Camera", price: 300, quantity: 0},
-            {id: 3, productName: "Samsung QLED TV", price: 350, quantity: 0},
-            {id: 4, productName: "Sony Play Station 7", price: 250, quantity: 0},
-            {id: 5, productName: "iPad Pro", price: 320, quantity: 0},
-            {id: 6, productName: "Hp Core i7 Laptop", price: 600, quantity: 0},
-            {id: 7, productName: "Xbox", price: 500, quantity: 0},
-        ]
+    constructor(props) { //Execute when the component is mounted
+        super(props) // component class (parent class)
+        this.state = { // initialization of state
+            products: [
+                {id: 1, productName: "iPhone", price: 150, quantity: 0},
+                {id: 2, productName: "Sony Camera", price: 300, quantity: 0},
+                {id: 3, productName: "Samsung QLED TV", price: 350, quantity: 0},
+                {id: 4, productName: "Sony Play Station 7", price: 250, quantity: 0},
+                {id: 5, productName: "iPad Pro", price: 320, quantity: 0},
+                {id: 6, productName: "Hp Core i7 Laptop", price: 600, quantity: 0},
+                {id: 7, productName: "Xbox", price: 500, quantity: 0},
+            ]
+        }
     }
+
     render() {
         return (
             <div className="container-fluid">
@@ -38,6 +41,30 @@ class ShoppingCart extends Component {
         );
     }
     // render ends here
+
+    //Components Life cylce
+
+    //Execute after contructor and render method (includes life 
+    //cycle fo child components, if any) of the current component
+    componentDidMount() {
+        //fetch data from data souce (http request)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        //make http call conditionally i.e
+        //if (prevProps.x != this.props.x) {
+            //make http call
+       // } 
+    }
+
+    componentWillUnmount() {
+        //write clean-up code to cancel http request
+    }
+
+    componentDidCatch(error, info) {
+        //you can write logger source e.g
+        localStorage.lastError = `${error} \n ${JSON.stringify(info)}`;
+    }
 
 
     //execute when user clicks on + button

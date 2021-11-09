@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 
 class Product extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            product: this.props.product
+        };
+    }
 
-    state = {
-        product: this.props.product
-    };
 
     render () {
         return (
